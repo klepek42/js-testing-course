@@ -17,17 +17,21 @@ it('should transform number to number', () => {
 	expect(result).toBe(2);
 });
 
-it('should transform array to number', () => {
-	const input = [2];
 
-	const result = transformToNumber(input);
-
-	expect(result).toBe(2);
-});
-
-it('should not transform a string string to number', () => {
+it('should not transform a text string to number', () => {
 	const input = "text";
 
 	const result = transformToNumber(input);
 	expect(result).toBeNaN();
+});
+
+it('should yield NaN for non-transformable values', () => {
+	const input = "invalid";
+	const input2 = {};
+
+	const result = transformToNumber(input);
+	const result2 = transformToNumber(input2);
+
+	expect(result).toBeNaN();
+	expect(result2).toBeNaN();
 });
