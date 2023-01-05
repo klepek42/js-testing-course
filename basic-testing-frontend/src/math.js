@@ -1,4 +1,4 @@
-import { cleanNumbers } from "./util/numbers"
+import { cleanNumbers } from "./util/numbers.js"
 
 export function add(numbers) {
   let sum = 0;
@@ -13,8 +13,8 @@ export function calculateResult(numbers) {
   let result = '';
 
   try {
-    const numbers = cleanNumbers(numbers);
-    result = add(numbers).toString();
+    const cleanedNumbers = cleanNumbers(numbers);
+    result = add(cleanedNumbers).toString();
   } catch (error) {
     result = error.message;
   }

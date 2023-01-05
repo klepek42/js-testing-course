@@ -13,7 +13,7 @@ export function extractEnteredNumberValues (form) {
 }
 
 export function convertResultText(result) {
-  let resultText == "";
+  let resultText = "";
   
   if (result === 'invalid') {
     resultText = 'Invalid input. You must enter valid numbers.';

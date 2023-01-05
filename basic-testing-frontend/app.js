@@ -1,4 +1,4 @@
-import { extractEnteredNumberValues } from './src/parser.js';
+import { extractEnteredNumberValues, convertResultText } from './src/parser.js';
 import { calculateResult } from './src/math.js';
 import { displayResultText } from './src/output.js';
 
