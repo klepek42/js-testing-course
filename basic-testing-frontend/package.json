@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "vitest --run --reporter verbose",
+    "coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "start": "http-server -c-1"
   },
