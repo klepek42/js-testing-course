@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
 
-import { generateToken } from "./async-example";
+import { generateToken, generateTokenPromise } from "./async-example";
 
 it('should generate a token value', (done) => {
 	const testUserEmail = "test@test.com";
@@ -18,4 +18,19 @@ it('should generate a token value', (done) => {
 		}
 
 	});
-}); 
+});
+
+it('should generate token value', () => {
+	const testUserEmail = "test@test.com";
+
+	return expect(generateTokenPromise(testUserEmail)).resolves.toBeDefined();
+});
+
+// Alternative way of testing the promise with async/await
+it('should generate token value with async/await', async () => {
+	const testUserEmail = "test@test.com";
+
+	const token = await generateTokenPromise(testUserEmail);
+
+	expect(token).toBeDefined();
+});
