@@ -26,7 +26,7 @@ afterAll(() => {
 
 
 
-it('should update the email', () => {
+it.concurrent('should update the email', () => {
   const newTestEmail = 'test2@test.com';
 
   user.updateEmail(newTestEmail);
@@ -34,7 +34,7 @@ it('should update the email', () => {
   expect(user.email).toBe(newTestEmail);
 });
 
-it('should have an email property', () => {
+it.concurrent('should have an email property', () => {
   expect(user).toHaveProperty('email');
 });
 
